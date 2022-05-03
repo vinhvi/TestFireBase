@@ -103,7 +103,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtDC" />
 
     <ImageView
-        android:id="@+id/firebaseimg"
+        android:id="@+id/image"
         android:layout_width="170dp"
         android:layout_height="130dp"
         android:layout_marginTop="28dp"
@@ -123,8 +123,8 @@
         android:textAllCaps="false"
         android:textStyle="bold"
         app:cornerRadius="40px"
-        app:layout_constraintEnd_toEndOf="@+id/firebaseimg"
+        app:layout_constraintEnd_toEndOf="@+id/image"
         app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="@+id/firebaseimg"
-        app:layout_constraintTop_toBottomOf="@+id/firebaseimg" />
+        app:layout_constraintStart_toStartOf="@+id/image"
+        app:layout_constraintTop_toBottomOf="@+id/image" />
 </androidx.constraintlayout.widget.ConstraintLayout>

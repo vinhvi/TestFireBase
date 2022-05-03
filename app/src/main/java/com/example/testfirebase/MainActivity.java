@@ -1,15 +1,25 @@
 package com.example.testfirebase;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -20,7 +30,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,11 +42,20 @@ public class MainActivity extends AppCompatActivity {
     private EditText edtDC;
     private EditText edtSdt;
     private EditText edtPass;
-    private
+    //upload data to firebase
     User user;
     FirebaseDatabase database;
     DatabaseReference databaseReference;
     private FirebaseAuth maAuth;
+    //upload image to firebase
+    private Button btnAddimage;
+    private ImageView imageView;
+    private Uri uri;
+    String picturePath;
+    Uri selectedImage;
+    Bitmap photo;
+    String ba1;
+    private int PICK_IMAGE_REQUEST = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +67,14 @@ public class MainActivity extends AppCompatActivity {
         edtSdt = findViewById(R.id.txtsdt);
         edtDC = findViewById(R.id.txtDC);
         edtPass = findViewById(R.id.txtPass);
+        imageView = findViewById(R.id.image);
+        btnAddimage = findViewById(R.id.btnAddImg);
+        btnAddimage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickpic();
+            }
+        });
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,5 +113,54 @@ public class MainActivity extends AppCompatActivity {
                         });
             }
         });
+
     }
+
+    private void upload() {
+        // image location URL
+        Log.e("path", "........" + picturePath);
+        // image
+        Bitmap bm = BitmapFactory.decodeFile(picturePath);
+        ByteArrayOutputStream bao = new ByteArrayOutputStream();
+        bm.compress(Bitmap.CompressFormat.JPEG, 90, bao);
+        byte[] ba = bao.toByteArray();
+
+        Log.e("base64", "...." + ba1);
+
+    }
+
+    private void clickpic() {
+        Intent intent = new Intent();
+        // Show only images, no videos or anything else
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        // Always show the chooser (if there are multiple options available)
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==0){
+            Bitmap bitmap = (Bitmap) data.getExtras().get("data");//image bitmap file
+            Bitmap resizeBitmap = Bitmap.createScaledBitmap(bitmap,680,500,false);
+            imageView.setImageBitmap(resizeBitmap);
+        }
+        else if(requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null){
+            Uri uri = data.getData();
+
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                // Log.d(TAG, String.valueOf(bitmap));
+
+                //ImageView imageView = (ImageView) findViewById(R.id.imageView);
+                Bitmap resizeBitmap = Bitmap.createScaledBitmap(bitmap,680,500,false);
+                imageView.setImageBitmap(resizeBitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+
 }
