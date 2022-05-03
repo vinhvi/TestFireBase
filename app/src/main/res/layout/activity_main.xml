@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/txtName"
+        android:layout_width="259dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="your name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/btnAddImg"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="@+id/btnAddImg"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddImg" />
+
+    <EditText
+        android:id="@+id/txtemail"
+        android:layout_width="259dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="your email"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/txtName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtName"
+        app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+    <EditText
+        android:id="@+id/txtsdt"
+        android:layout_width="259dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="your number phone"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/txtemail"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/txtemail"
+        app:layout_constraintTop_toBottomOf="@+id/txtemail" />
+
+    <EditText
+        android:id="@+id/txtDC"
+        android:layout_width="259dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="your adress"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/txtsdt"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/txtsdt"
+        app:layout_constraintTop_toBottomOf="@+id/txtsdt" />
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="260dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#CD0A0A"
+        android:text="ADD"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:cornerRadius="45px"
+        app:layout_constraintEnd_toEndOf="@+id/txtPass"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtPass"
+        app:layout_constraintTop_toBottomOf="@+id/txtPass" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="325dp"
+        android:layout_height="39dp"
+        android:text="Your data  will upload for firebase"
+        android:textAlignment="textStart"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnAdd"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="@+id/btnAdd"
+        app:layout_constraintTop_toBottomOf="@+id/btnAdd"
+        app:layout_constraintVertical_bias="0.314" />
+
+    <EditText
+        android:id="@+id/txtPass"
+        android:layout_width="259dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Your  password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/txtDC"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/txtDC"
+        app:layout_constraintTop_toBottomOf="@+id/txtDC" />
+
+    <ImageView
+        android:id="@+id/firebaseimg"
+        android:layout_width="170dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/btnAddImg"
+        android:layout_width="208dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="12dp"
+        android:text="Chose your img"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        app:cornerRadius="40px"
+        app:layout_constraintEnd_toEndOf="@+id/firebaseimg"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="@+id/firebaseimg"
+        app:layout_constraintTop_toBottomOf="@+id/firebaseimg" />
+</androidx.constraintlayout.widget.ConstraintLayout>
