@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TestFirebase">
         <activity
-            android:name=".MainActivity"
+            android:name=".List_User"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
