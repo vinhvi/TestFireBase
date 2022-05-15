@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/edt_Name_food"
+        android:layout_width="305dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="price food"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textView_Id"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView_Id"
+        app:layout_constraintTop_toBottomOf="@+id/textView_Id" />
+
+    <EditText
+        android:id="@+id/edt_Price"
+        android:layout_width="305dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="68dp"
+        android:ems="10"
+        android:hint="name food"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/edt_Name_food"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/edt_Name_food"
+        app:layout_constraintTop_toBottomOf="@+id/edt_Name_food" />
+
+    <TextView
+        android:id="@+id/textView_Id"
+        android:layout_width="305dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="92dp"
+        android:text="TextView"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_Add_food"
+        android:layout_width="288dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="64dp"
+        android:text="ADD"
+        app:layout_constraintEnd_toEndOf="@+id/edt_Price"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/edt_Price"
+        app:layout_constraintTop_toBottomOf="@+id/edt_Price" />
+</androidx.constraintlayout.widget.ConstraintLayout>

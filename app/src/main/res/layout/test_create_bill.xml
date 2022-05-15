@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/edt_id_food"
+        android:layout_width="269dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="136dp"
+        android:ems="10"
+        android:hint="Name food"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_Price_food"
+        android:layout_width="269dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="Price"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/edt_id_food"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edt_id_food"
+        app:layout_constraintTop_toBottomOf="@+id/edt_id_food" />
+
+    <Button
+        android:id="@+id/bttn_Create_bill"
+        android:layout_width="219dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="44dp"
+        android:text="Create Bill"
+        app:layout_constraintEnd_toEndOf="@+id/btn_Cong"
+        app:layout_constraintStart_toStartOf="@+id/btnn_Tru"
+        app:layout_constraintTop_toBottomOf="@+id/tv_SL" />
+
+    <TextView
+        android:id="@+id/tv_SL"
+        android:layout_width="60dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="12dp"
+        android:text="1"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btnn_Tru"
+        app:layout_constraintStart_toEndOf="@+id/btnn_Tru"
+        app:layout_constraintTop_toTopOf="@+id/btnn_Tru"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnn_Tru"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="136dp"
+        android:text="Tru"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/edt_Price_food"
+        app:layout_constraintTop_toBottomOf="@+id/edt_Price_food" />
+
+    <Button
+        android:id="@+id/btn_Cong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cong"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_SL"
+        app:layout_constraintEnd_toEndOf="@+id/edt_Price_food"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_SL"
+        app:layout_constraintTop_toTopOf="@+id/tv_SL"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnBack_foodInfor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

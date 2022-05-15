@@ -3,17 +3,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:backgroundTint="#E60808">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListUser"
-        android:layout_width="409dp"
-        android:layout_height="601dp"
+        android:layout_width="405dp"
+        android:layout_height="409dp"
         android:layout_marginStart="1dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_Payment"
+        android:layout_width="79dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="52dp"
+        android:background="#00000000"
+        android:drawableLeft="@drawable/icon_cart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvListUser" />
+
+    <TextView
+        android:id="@+id/txt_int"
+        android:layout_width="20dp"
+        android:layout_height="18dp"
+        android:background="#D60E0E"
+        android:backgroundTint="#F30F0F"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Payment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvListUser"
+        app:layout_constraintVertical_bias="1.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

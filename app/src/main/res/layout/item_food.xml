@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150sp">
+
+    <TextView
+        android:id="@+id/tv_Name_food_payment"
+        android:layout_width="163dp"
+        android:layout_height="57dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_SL_food"
+        app:layout_constraintStart_toEndOf="@+id/tv_SL_food"
+        app:layout_constraintTop_toTopOf="@+id/tv_SL_food" />
+
+    <TextView
+        android:id="@+id/tv_Price_food_payment"
+        android:layout_width="117dp"
+        android:layout_height="59dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_Name_food_payment"
+        app:layout_constraintStart_toEndOf="@+id/tv_Name_food_payment"
+        app:layout_constraintTop_toTopOf="@+id/tv_Name_food_payment"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tv_SL_food"
+        android:layout_width="47dp"
+        android:layout_height="60dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_X"
+        android:layout_width="55dp"
+        android:layout_height="46dp"
+        android:background="#00000000"
+        android:drawableLeft="@drawable/x_food"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_Price_food_payment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_Price_food_payment"
+        app:layout_constraintTop_toTopOf="@+id/tv_Price_food_payment" />
+</androidx.constraintlayout.widget.ConstraintLayout>
